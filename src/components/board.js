@@ -13,7 +13,7 @@ export default class Board extends React.Component {
             lists: []
         };
 
-        this.addList = this.addList.bind(this); {/* what does bind this mean?*/}
+        //this.addList = this.addList.bind(this); /* what does bind this mean? Trying to maintain the scope of addList*/
     }
 
     addList(title) {
@@ -32,7 +32,7 @@ export default class Board extends React.Component {
                 <h2>{this.props.title}</h2>
                 <div className="lists">
                     {lists}
-                    <AddForm type="list" onAdd={this.addList} />
+                    <AddForm type="list" onAdd={ () => this.addList() } />
                 </div>
             </div>
         );
